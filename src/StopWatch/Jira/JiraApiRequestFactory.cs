@@ -64,14 +64,13 @@ namespace StopWatch
         public IRestRequest CreatePostWorklogRequest(string key, DateTimeOffset started, TimeSpan time, string comment, EstimateUpdateMethods adjustmentMethod, string adjustmentValue)
         {
             var request = restRequestFactory.Create(String.Format("/rest/api/2/issue/{0}/worklog", key.Trim()), Method.POST);
-            request.RequestFormat = DataFormat.Json;
-            request.AddBody(new
-                {
-                    timeSpent = JiraTimeHelpers.TimeSpanToJiraTime(time),
-                    started = JiraTimeHelpers.DateTimeToJiraDateTime(started),
-                    comment = comment
-                }
-            );
+            request.AddJsonBody(new
+            {
+                timeSpent = JiraTimeHelpers.TimeSpanToJiraTime(time),
+                started = JiraTimeHelpers.DateTimeToJiraDateTime(started),
+                comment = comment
+            });
+
             switch(adjustmentMethod) {
                 case EstimateUpdateMethods.Leave:
                     request.AddQueryParameter("adjustEstimate", "leave");
@@ -100,12 +99,11 @@ namespace StopWatch
         public IRestRequest CreatePostCommentRequest(string key, string comment)
         {
             var request = restRequestFactory.Create(String.Format("/rest/api/2/issue/{0}/comment", key.Trim()), Method.POST);
-            request.RequestFormat = DataFormat.Json;
-            request.AddBody(new
-                {
-                    body = comment
-                }
-            );
+            request.AddJsonBody(new
+            {
+                body = comment
+            });
+
             return request;
         }
 
@@ -118,15 +116,13 @@ namespace StopWatch
         public IRestRequest CreateDoTransition(string key, int transitionId)
         {
             var request = restRequestFactory.Create(String.Format("/rest/api/2/issue/{0}/transitions", key.Trim()), Method.POST);
-            request.RequestFormat = DataFormat.Json;
-            request.AddBody(new
+            request.AddJsonBody(new
+            {
+                transition = new
                 {
-                    transition = new
-                    {
-                        id = transitionId
-                    }
+                    id = transitionId
                 }
-            );
+            });
             return request;
         }
         #endregion
