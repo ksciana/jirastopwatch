@@ -30,6 +30,8 @@ namespace StopWatch
         #region public methods
         public MainForm()
         {
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+
             settings = Settings.Instance;
             if (!settings.Load())
                 MessageBox.Show(string.Format("An error occurred while loading settings for Jira StopWatch. Your configuration file has most likely become corrupted.{0}{0}And older configuration file has been loaded instead, so please verify your settings.", Environment.NewLine), "Jira StopWatch");

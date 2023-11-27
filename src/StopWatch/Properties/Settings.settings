@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="IssueCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">6</Value>
+      <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="PersistedIssues" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -48,10 +48,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="LoggingEnabled" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CheckForUpdate" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="IncludeProjectName" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

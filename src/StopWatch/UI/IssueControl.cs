@@ -263,145 +263,143 @@ namespace StopWatch
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.cbJira = new System.Windows.Forms.ComboBox();
-            this.tbTime = new System.Windows.Forms.TextBox();
-            this.lblSummary = new System.Windows.Forms.Label();
-            this.ttIssue = new System.Windows.Forms.ToolTip(this.components);
-            this.btnRemoveIssue = new System.Windows.Forms.Button();
-            this.btnPostAndReset = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnStartStop = new System.Windows.Forms.Button();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            cbJira = new ComboBox();
+            tbTime = new TextBox();
+            lblSummary = new Label();
+            ttIssue = new ToolTip(components);
+            btnRemoveIssue = new Button();
+            btnPostAndReset = new Button();
+            btnReset = new Button();
+            btnStartStop = new Button();
+            btnOpen = new Button();
+            SuspendLayout();
             // 
             // cbJira
             // 
-            this.cbJira.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbJira.DisplayMember = "Key";
-            this.cbJira.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbJira.DropDownHeight = 90;
-            this.cbJira.DropDownWidth = 488;
-            this.cbJira.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.cbJira.IntegralHeight = false;
-            this.cbJira.Location = new System.Drawing.Point(12, 5);
-            this.cbJira.Name = "cbJira";
-            this.cbJira.Size = new System.Drawing.Size(155, 28);
-            this.cbJira.TabIndex = 0;
-            this.cbJira.ValueMember = "Key";
-            this.cbJira.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cbJira_DrawItem);
-            this.cbJira.DropDown += new System.EventHandler(this.cbJira_DropDown);
-            this.cbJira.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cbJira_MeasureItem);
-            this.cbJira.SelectionChangeCommitted += new System.EventHandler(this.cbJira_SelectionChangeCommitted);
-            this.cbJira.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbJira_KeyDown);
-            this.cbJira.Leave += new System.EventHandler(this.cbJira_Leave);
+            cbJira.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbJira.DisplayMember = "Key";
+            cbJira.DrawMode = DrawMode.OwnerDrawVariable;
+            cbJira.DropDownHeight = 90;
+            cbJira.DropDownWidth = 488;
+            cbJira.Font = new Font("Microsoft Sans Serif", 13F);
+            cbJira.IntegralHeight = false;
+            cbJira.Location = new Point(12, 5);
+            cbJira.Name = "cbJira";
+            cbJira.Size = new Size(155, 33);
+            cbJira.TabIndex = 0;
+            cbJira.ValueMember = "Key";
+            cbJira.DrawItem += cbJira_DrawItem;
+            cbJira.DropDown += cbJira_DropDown;
+            cbJira.MeasureItem += cbJira_MeasureItem;
+            cbJira.SelectionChangeCommitted += cbJira_SelectionChangeCommitted;
+            cbJira.KeyDown += cbJira_KeyDown;
+            cbJira.Leave += cbJira_Leave;
             // 
             // tbTime
             // 
-            this.tbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.3F);
-            this.tbTime.Location = new System.Drawing.Point(256, 5);
-            this.tbTime.Name = "tbTime";
-            this.tbTime.ReadOnly = true;
-            this.tbTime.Size = new System.Drawing.Size(107, 28);
-            this.tbTime.TabIndex = 3;
-            this.tbTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTime_KeyDown);
-            this.tbTime.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tbTime_MouseDoubleClick);
-            this.tbTime.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbTime_MouseUp);
+            tbTime.Font = new Font("Microsoft Sans Serif", 13.3F);
+            tbTime.Location = new Point(256, 5);
+            tbTime.Name = "tbTime";
+            tbTime.ReadOnly = true;
+            tbTime.Size = new Size(107, 33);
+            tbTime.TabIndex = 3;
+            tbTime.TextAlign = HorizontalAlignment.Right;
+            tbTime.KeyDown += tbTime_KeyDown;
+            tbTime.MouseDoubleClick += tbTime_MouseDoubleClick;
+            tbTime.MouseUp += tbTime_MouseUp;
             // 
             // lblSummary
             // 
-            this.lblSummary.AutoEllipsis = true;
-            this.lblSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSummary.Location = new System.Drawing.Point(11, 36);
-            this.lblSummary.Name = "lblSummary";
-            this.lblSummary.Size = new System.Drawing.Size(482, 17);
-            this.lblSummary.TabIndex = 6;
-            this.lblSummary.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblSummary_MouseUp);
+            lblSummary.AutoEllipsis = true;
+            lblSummary.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            lblSummary.Location = new Point(11, 36);
+            lblSummary.Name = "lblSummary";
+            lblSummary.Size = new Size(482, 17);
+            lblSummary.TabIndex = 6;
+            lblSummary.MouseUp += lblSummary_MouseUp;
             // 
             // btnRemoveIssue
             // 
-            this.btnRemoveIssue.Enabled = false;
-            this.btnRemoveIssue.Image = global::StopWatch.Properties.Resources.delete24;
-            this.btnRemoveIssue.Location = new System.Drawing.Point(465, 3);
-            this.btnRemoveIssue.Name = "btnRemoveIssue";
-            this.btnRemoveIssue.Size = new System.Drawing.Size(32, 32);
-            this.btnRemoveIssue.TabIndex = 7;
-            this.ttIssue.SetToolTip(this.btnRemoveIssue, "Remove issue row (CTRL-DEL)");
-            this.btnRemoveIssue.UseVisualStyleBackColor = true;
-            this.btnRemoveIssue.Click += new System.EventHandler(this.btnRemoveIssue_Click);
+            btnRemoveIssue.Enabled = false;
+            btnRemoveIssue.Image = Properties.Resources.delete24;
+            btnRemoveIssue.Location = new Point(465, 3);
+            btnRemoveIssue.Name = "btnRemoveIssue";
+            btnRemoveIssue.Size = new Size(32, 32);
+            btnRemoveIssue.TabIndex = 7;
+            ttIssue.SetToolTip(btnRemoveIssue, "Remove issue row (CTRL-DEL)");
+            btnRemoveIssue.UseVisualStyleBackColor = true;
+            btnRemoveIssue.Click += btnRemoveIssue_Click;
             // 
             // btnPostAndReset
             // 
-            this.btnPostAndReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPostAndReset.Image = global::StopWatch.Properties.Resources.posttime26;
-            this.btnPostAndReset.Location = new System.Drawing.Point(369, 3);
-            this.btnPostAndReset.Name = "btnPostAndReset";
-            this.btnPostAndReset.Size = new System.Drawing.Size(32, 32);
-            this.btnPostAndReset.TabIndex = 4;
-            this.ttIssue.SetToolTip(this.btnPostAndReset, "Submit worklog to Jira and reset timer (CTRL-L)");
-            this.btnPostAndReset.UseVisualStyleBackColor = true;
-            this.btnPostAndReset.Click += new System.EventHandler(this.btnPostAndReset_Click);
-            this.btnPostAndReset.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnPostAndReset_MouseUp);
+            btnPostAndReset.Cursor = Cursors.Hand;
+            btnPostAndReset.Image = Properties.Resources.posttime26;
+            btnPostAndReset.Location = new Point(369, 3);
+            btnPostAndReset.Name = "btnPostAndReset";
+            btnPostAndReset.Size = new Size(32, 32);
+            btnPostAndReset.TabIndex = 4;
+            ttIssue.SetToolTip(btnPostAndReset, "Submit worklog to Jira and reset timer (CTRL-L)");
+            btnPostAndReset.UseVisualStyleBackColor = true;
+            btnPostAndReset.Click += btnPostAndReset_Click;
+            btnPostAndReset.MouseUp += btnPostAndReset_MouseUp;
             // 
             // btnReset
             // 
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Image = global::StopWatch.Properties.Resources.reset24;
-            this.btnReset.Location = new System.Drawing.Point(429, 3);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(32, 32);
-            this.btnReset.TabIndex = 5;
-            this.ttIssue.SetToolTip(this.btnReset, "Reset timer (CTRL-R)");
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            this.btnReset.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnReset_MouseUp);
+            btnReset.Cursor = Cursors.Hand;
+            btnReset.Image = Properties.Resources.reset24;
+            btnReset.Location = new Point(429, 3);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(32, 32);
+            btnReset.TabIndex = 5;
+            ttIssue.SetToolTip(btnReset, "Reset timer (CTRL-R)");
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
+            btnReset.MouseUp += btnReset_MouseUp;
             // 
             // btnStartStop
             // 
-            this.btnStartStop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStartStop.Image = global::StopWatch.Properties.Resources.play26;
-            this.btnStartStop.Location = new System.Drawing.Point(220, 3);
-            this.btnStartStop.Name = "btnStartStop";
-            this.btnStartStop.Size = new System.Drawing.Size(32, 32);
-            this.btnStartStop.TabIndex = 2;
-            this.ttIssue.SetToolTip(this.btnStartStop, "Start/stop timer (CTRL-P)");
-            this.btnStartStop.UseVisualStyleBackColor = true;
-            this.btnStartStop.Click += new System.EventHandler(this.btnStartStop_Click);
-            this.btnStartStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStartStop_MouseUp);
+            btnStartStop.Cursor = Cursors.Hand;
+            btnStartStop.Image = Properties.Resources.play26;
+            btnStartStop.Location = new Point(220, 3);
+            btnStartStop.Name = "btnStartStop";
+            btnStartStop.Size = new Size(32, 32);
+            btnStartStop.TabIndex = 2;
+            ttIssue.SetToolTip(btnStartStop, "Start/stop timer (CTRL-P)");
+            btnStartStop.UseVisualStyleBackColor = true;
+            btnStartStop.Click += btnStartStop_Click;
+            btnStartStop.MouseUp += btnStartStop_MouseUp;
             // 
             // btnOpen
             // 
-            this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOpen.Image = global::StopWatch.Properties.Resources.openbrowser26;
-            this.btnOpen.Location = new System.Drawing.Point(168, 3);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(32, 32);
-            this.btnOpen.TabIndex = 1;
-            this.ttIssue.SetToolTip(this.btnOpen, "Open issue in browser (CTRL-O)");
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            this.btnOpen.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnOpen_MouseUp);
+            btnOpen.Cursor = Cursors.Hand;
+            btnOpen.Image = Properties.Resources.openbrowser26;
+            btnOpen.Location = new Point(168, 3);
+            btnOpen.Name = "btnOpen";
+            btnOpen.Size = new Size(32, 32);
+            btnOpen.TabIndex = 1;
+            ttIssue.SetToolTip(btnOpen, "Open issue in browser (CTRL-O)");
+            btnOpen.UseVisualStyleBackColor = true;
+            btnOpen.Click += btnOpen_Click;
+            btnOpen.MouseUp += btnOpen_MouseUp;
             // 
             // IssueControl
             // 
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.btnRemoveIssue);
-            this.Controls.Add(this.btnPostAndReset);
-            this.Controls.Add(this.lblSummary);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnStartStop);
-            this.Controls.Add(this.tbTime);
-            this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.cbJira);
-            this.Name = "IssueControl";
-            this.Size = new System.Drawing.Size(517, 58);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.IssueControl_MouseUp);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            BackColor = SystemColors.Window;
+            Controls.Add(btnRemoveIssue);
+            Controls.Add(btnPostAndReset);
+            Controls.Add(lblSummary);
+            Controls.Add(btnReset);
+            Controls.Add(btnStartStop);
+            Controls.Add(tbTime);
+            Controls.Add(btnOpen);
+            Controls.Add(cbJira);
+            Name = "IssueControl";
+            Size = new Size(517, 58);
+            MouseUp += IssueControl_MouseUp;
+            ResumeLayout(false);
+            PerformLayout();
         }
-
 
         public void Reset()
         {

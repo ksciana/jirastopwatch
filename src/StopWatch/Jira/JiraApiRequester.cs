@@ -20,7 +20,7 @@ using System.Net;
 
 namespace StopWatch
 {
-    internal class JiraApiRequester : IJiraApiRequester
+    public class JiraApiRequester : IJiraApiRequester
     {
         public string ErrorMessage { get; private set; }
 
@@ -40,7 +40,7 @@ namespace StopWatch
 
             _logger.Log(string.Format("Request: {0}", client.BuildUri(request)));
             IRestResponse<T> response = client.Execute<T>(request);
-            _logger.Log(string.Format("Response: {0} - {1}", response.StatusCode, StringHelpers.Truncate(response.Content, 100)));
+            _logger.Log(string.Format("Response: {0} - {1}", response.StatusCode, response.Content.Truncate(100)));
 
             // If login session has expired, try to login, and then re-execute the original request
             if (response.StatusCode == HttpStatusCode.Unauthorized || response.StatusCode == HttpStatusCode.BadRequest)

@@ -18,7 +18,7 @@ using System;
 
 namespace StopWatch
 {
-    internal class JiraApiRequestFactory : IJiraApiRequestFactory
+    public class JiraApiRequestFactory : IJiraApiRequestFactory
     {
         #region public methods
         public JiraApiRequestFactory(IRestRequestFactory restRequestFactory)

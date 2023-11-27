@@ -17,11 +17,17 @@ using System;
 
 namespace StopWatch
 {
-    class StringHelpers
+    public static class StringHelpers
     {
-        public static string Truncate(string str, int length)
+
+        public static string Truncate(this string value, int maxLength)
         {
-            return str.Substring(0, Math.Min(str.Length, length));
+            if (string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
         }
 
     }

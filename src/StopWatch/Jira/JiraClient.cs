@@ -19,7 +19,7 @@ using StopWatch.Logging;
 
 namespace StopWatch
 {
-    internal class JiraClient
+    public class JiraClient
     {
         public bool SessionValid { get; private set; }
 
