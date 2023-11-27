@@ -15,6 +15,7 @@ limitations under the License.
 **************************************************************************/
 using System;
 using System.Collections.Generic;
+using StopWatch.Logging;
 
 namespace StopWatch
 {
@@ -94,8 +95,18 @@ namespace StopWatch
         public string GetIssueSummary(string key, bool addProjectName)
         {
             var request = jiraApiRequestFactory.CreateGetIssueSummaryRequest(key);
-            var issue = jiraApiRequester.DoAuthenticatedRequest<Issue>(request).Fields;
-            return addProjectName ? issue.Project.Name + ": " + issue.Summary : issue.Summary;
+
+            try
+            {
+                var issue = jiraApiRequester.DoAuthenticatedRequest<Issue>(request).Fields;
+                return addProjectName ? issue.Project.Name + ": " + issue.Summary : issue.Summary;
+            }
+            catch (RequestDeniedException ex)
+            {
+                Logger.Instance.Log("RequestDeniedException", ex);
+            }
+
+            return string.Empty;
         }
 
         public TimetrackingFields GetIssueTimetracking(string key)
