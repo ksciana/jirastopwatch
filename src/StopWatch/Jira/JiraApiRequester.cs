@@ -81,11 +81,11 @@ namespace StopWatch
         private string _apiToken;
     }
 
-    internal class RequestDeniedException : Exception
+    public class RequestDeniedException : Exception
     {
     }
 
-    internal class UsernameAndApiTokenNotSetException : Exception
+    public class UsernameAndApiTokenNotSetException : Exception
     {
     }
 }

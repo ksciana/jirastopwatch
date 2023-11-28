@@ -43,200 +43,207 @@ namespace StopWatch
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.pbSettings = new System.Windows.Forms.PictureBox();
-            this.lblConnectionStatus = new System.Windows.Forms.Label();
-            this.cbFilters = new System.Windows.Forms.ComboBox();
-            this.lblActiveFilter = new System.Windows.Forms.Label();
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.lblTotalTime = new System.Windows.Forms.Label();
-            this.tbTotalTime = new System.Windows.Forms.TextBox();
-            this.pMain = new System.Windows.Forms.Panel();
-            this.pBottom = new System.Windows.Forms.Panel();
-            this.lblDivider = new System.Windows.Forms.Label();
-            this.pbAddIssue = new System.Windows.Forms.PictureBox();
-            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.pbHelp = new System.Windows.Forms.PictureBox();
-            this.pTop = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSettings)).BeginInit();
-            this.pBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddIssue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHelp)).BeginInit();
-            this.pTop.SuspendLayout();
-            this.SuspendLayout();
+            pbSettings = new System.Windows.Forms.PictureBox();
+            lblConnectionStatus = new System.Windows.Forms.Label();
+            cbFilters = new System.Windows.Forms.ComboBox();
+            lblActiveFilter = new System.Windows.Forms.Label();
+            notifyIcon = new System.Windows.Forms.NotifyIcon(components);
+            lblTotalTime = new System.Windows.Forms.Label();
+            tbTotalTime = new System.Windows.Forms.TextBox();
+            pMain = new System.Windows.Forms.Panel();
+            pBottom = new System.Windows.Forms.Panel();
+            lblDivider = new System.Windows.Forms.Label();
+            pbAddIssue = new System.Windows.Forms.PictureBox();
+            ttMain = new System.Windows.Forms.ToolTip(components);
+            pbHelp = new System.Windows.Forms.PictureBox();
+            pTop = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)pbSettings).BeginInit();
+            pBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAddIssue).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHelp).BeginInit();
+            pTop.SuspendLayout();
+            SuspendLayout();
             // 
             // pbSettings
             // 
-            this.pbSettings.BackgroundImage = global::StopWatch.Properties.Resources.settings22;
-            this.pbSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSettings.Location = new System.Drawing.Point(471, 5);
-            this.pbSettings.Margin = new System.Windows.Forms.Padding(2);
-            this.pbSettings.Name = "pbSettings";
-            this.pbSettings.Size = new System.Drawing.Size(22, 22);
-            this.pbSettings.TabIndex = 0;
-            this.pbSettings.TabStop = false;
-            this.ttMain.SetToolTip(this.pbSettings, "Configure Jira Stopwatch");
-            this.pbSettings.Click += new System.EventHandler(this.pbSettings_Click);
+            pbSettings.BackgroundImage = Properties.Resource.settings;
+            pbSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            pbSettings.Location = new System.Drawing.Point(628, 8);
+            pbSettings.Name = "pbSettings";
+            pbSettings.Size = new System.Drawing.Size(29, 34);
+            pbSettings.TabIndex = 0;
+            pbSettings.TabStop = false;
+            ttMain.SetToolTip(pbSettings, "Configure Jira Stopwatch");
+            pbSettings.Click += pbSettings_Click;
             // 
             // lblConnectionStatus
             // 
-            this.lblConnectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblConnectionStatus.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblConnectionStatus.Location = new System.Drawing.Point(12, 8);
-            this.lblConnectionStatus.Name = "lblConnectionStatus";
-            this.lblConnectionStatus.Size = new System.Drawing.Size(117, 21);
-            this.lblConnectionStatus.TabIndex = 3;
-            this.lblConnectionStatus.Text = "x";
-            this.lblConnectionStatus.Click += new System.EventHandler(this.lblConnectionStatus_Click);
+            lblConnectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            lblConnectionStatus.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            lblConnectionStatus.Location = new System.Drawing.Point(16, 12);
+            lblConnectionStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblConnectionStatus.Name = "lblConnectionStatus";
+            lblConnectionStatus.Size = new System.Drawing.Size(156, 32);
+            lblConnectionStatus.TabIndex = 3;
+            lblConnectionStatus.Text = "x";
+            lblConnectionStatus.Click += lblConnectionStatus_Click;
             // 
             // cbFilters
             // 
-            this.cbFilters.DropDownWidth = 422;
-            this.cbFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbFilters.FormattingEnabled = true;
-            this.cbFilters.Location = new System.Drawing.Point(56, 5);
-            this.cbFilters.Margin = new System.Windows.Forms.Padding(2);
-            this.cbFilters.Name = "cbFilters";
-            this.cbFilters.Size = new System.Drawing.Size(151, 24);
-            this.cbFilters.TabIndex = 4;
-            this.cbFilters.DropDown += new System.EventHandler(this.cbFilters_DropDown);
-            this.cbFilters.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
+            cbFilters.DropDownWidth = 422;
+            cbFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            cbFilters.FormattingEnabled = true;
+            cbFilters.Location = new System.Drawing.Point(75, 8);
+            cbFilters.Name = "cbFilters";
+            cbFilters.Size = new System.Drawing.Size(200, 28);
+            cbFilters.TabIndex = 4;
+            cbFilters.DropDown += cbFilters_DropDown;
+            cbFilters.SelectedIndexChanged += cbFilters_SelectedIndexChanged;
             // 
             // lblActiveFilter
             // 
-            this.lblActiveFilter.AutoSize = true;
-            this.lblActiveFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblActiveFilter.ForeColor = System.Drawing.Color.White;
-            this.lblActiveFilter.Location = new System.Drawing.Point(12, 8);
-            this.lblActiveFilter.Name = "lblActiveFilter";
-            this.lblActiveFilter.Size = new System.Drawing.Size(39, 17);
-            this.lblActiveFilter.TabIndex = 5;
-            this.lblActiveFilter.Text = "Filter";
+            lblActiveFilter.AutoSize = true;
+            lblActiveFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            lblActiveFilter.ForeColor = System.Drawing.Color.White;
+            lblActiveFilter.Location = new System.Drawing.Point(16, 12);
+            lblActiveFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblActiveFilter.Name = "lblActiveFilter";
+            lblActiveFilter.Size = new System.Drawing.Size(47, 20);
+            lblActiveFilter.TabIndex = 5;
+            lblActiveFilter.Text = "Filter";
             // 
             // notifyIcon
             // 
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "JIRA StopWatch";
-            this.notifyIcon.Click += new System.EventHandler(this.notifyIcon_Click);
+            notifyIcon.Icon = (System.Drawing.Icon)resources.GetObject("notifyIcon.Icon");
+            notifyIcon.Text = "JIRA StopWatch";
+            notifyIcon.Click += notifyIcon_Click;
             // 
             // lblTotalTime
             // 
-            this.lblTotalTime.AutoSize = true;
-            this.lblTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTotalTime.Location = new System.Drawing.Point(213, 8);
-            this.lblTotalTime.Name = "lblTotalTime";
-            this.lblTotalTime.Size = new System.Drawing.Size(40, 17);
-            this.lblTotalTime.TabIndex = 6;
-            this.lblTotalTime.Text = "Total";
-            this.lblTotalTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            lblTotalTime.AutoSize = true;
+            lblTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            lblTotalTime.Location = new System.Drawing.Point(284, 12);
+            lblTotalTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTotalTime.Name = "lblTotalTime";
+            lblTotalTime.Size = new System.Drawing.Size(46, 20);
+            lblTotalTime.TabIndex = 6;
+            lblTotalTime.Text = "Total";
+            lblTotalTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // tbTotalTime
             // 
-            this.tbTotalTime.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTotalTime.Location = new System.Drawing.Point(259, 4);
-            this.tbTotalTime.Name = "tbTotalTime";
-            this.tbTotalTime.ReadOnly = true;
-            this.tbTotalTime.Size = new System.Drawing.Size(102, 23);
-            this.tbTotalTime.TabIndex = 8;
-            this.tbTotalTime.Text = "2D 45H 34M";
-            this.tbTotalTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            tbTotalTime.BackColor = System.Drawing.SystemColors.Window;
+            tbTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            tbTotalTime.Location = new System.Drawing.Point(345, 6);
+            tbTotalTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tbTotalTime.Name = "tbTotalTime";
+            tbTotalTime.ReadOnly = true;
+            tbTotalTime.Size = new System.Drawing.Size(135, 26);
+            tbTotalTime.TabIndex = 8;
+            tbTotalTime.Text = "2D 45H 34M";
+            tbTotalTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pMain
             // 
-            this.pMain.BackColor = System.Drawing.SystemColors.Window;
-            this.pMain.Location = new System.Drawing.Point(0, 35);
-            this.pMain.Margin = new System.Windows.Forms.Padding(0);
-            this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(517, 70);
-            this.pMain.TabIndex = 9;
+            pMain.BackColor = System.Drawing.SystemColors.Window;
+            pMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            pMain.Location = new System.Drawing.Point(0, 54);
+            pMain.Margin = new System.Windows.Forms.Padding(0);
+            pMain.Name = "pMain";
+            pMain.Size = new System.Drawing.Size(732, 240);
+            pMain.TabIndex = 9;
             // 
             // pBottom
             // 
-            this.pBottom.Controls.Add(this.lblDivider);
-            this.pBottom.Controls.Add(this.tbTotalTime);
-            this.pBottom.Controls.Add(this.pbSettings);
-            this.pBottom.Controls.Add(this.lblTotalTime);
-            this.pBottom.Controls.Add(this.lblConnectionStatus);
-            this.pBottom.Location = new System.Drawing.Point(0, 140);
-            this.pBottom.Name = "pBottom";
-            this.pBottom.Size = new System.Drawing.Size(517, 32);
-            this.pBottom.TabIndex = 10;
+            pBottom.Controls.Add(lblDivider);
+            pBottom.Controls.Add(tbTotalTime);
+            pBottom.Controls.Add(pbSettings);
+            pBottom.Controls.Add(lblTotalTime);
+            pBottom.Controls.Add(lblConnectionStatus);
+            pBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            pBottom.Location = new System.Drawing.Point(0, 294);
+            pBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pBottom.Name = "pBottom";
+            pBottom.Size = new System.Drawing.Size(732, 49);
+            pBottom.TabIndex = 10;
             // 
             // lblDivider
             // 
-            this.lblDivider.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDivider.Location = new System.Drawing.Point(0, 0);
-            this.lblDivider.Name = "lblDivider";
-            this.lblDivider.Size = new System.Drawing.Size(517, 2);
-            this.lblDivider.TabIndex = 9;
+            lblDivider.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            lblDivider.Location = new System.Drawing.Point(0, 0);
+            lblDivider.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblDivider.Name = "lblDivider";
+            lblDivider.Size = new System.Drawing.Size(689, 3);
+            lblDivider.TabIndex = 9;
             // 
             // pbAddIssue
             // 
-            this.pbAddIssue.BackgroundImage = global::StopWatch.Properties.Resources.addissue22;
-            this.pbAddIssue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAddIssue.Location = new System.Drawing.Point(434, 5);
-            this.pbAddIssue.Margin = new System.Windows.Forms.Padding(2);
-            this.pbAddIssue.Name = "pbAddIssue";
-            this.pbAddIssue.Size = new System.Drawing.Size(24, 24);
-            this.pbAddIssue.TabIndex = 11;
-            this.pbAddIssue.TabStop = false;
-            this.ttMain.SetToolTip(this.pbAddIssue, "Add another issue row (CTRL-N)");
-            this.pbAddIssue.Click += new System.EventHandler(this.pbAddIssue_Clicked);
+            pbAddIssue.BackgroundImage = Properties.Resource.add;
+            pbAddIssue.Cursor = System.Windows.Forms.Cursors.Hand;
+            pbAddIssue.Location = new System.Drawing.Point(579, 8);
+            pbAddIssue.Name = "pbAddIssue";
+            pbAddIssue.Size = new System.Drawing.Size(32, 37);
+            pbAddIssue.TabIndex = 11;
+            pbAddIssue.TabStop = false;
+            ttMain.SetToolTip(pbAddIssue, "Add another issue row (CTRL-N)");
+            pbAddIssue.Click += pbAddIssue_Clicked;
             // 
             // pbHelp
             // 
-            this.pbHelp.BackgroundImage = global::StopWatch.Properties.Resources.help22;
-            this.pbHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbHelp.Location = new System.Drawing.Point(471, 5);
-            this.pbHelp.Name = "pbHelp";
-            this.pbHelp.Size = new System.Drawing.Size(22, 22);
-            this.pbHelp.TabIndex = 12;
-            this.pbHelp.TabStop = false;
-            this.ttMain.SetToolTip(this.pbHelp, "Open help page in your browser");
-            this.pbHelp.Click += new System.EventHandler(this.pbHelp_Click);
+            pbHelp.BackgroundImage = Properties.Resource.help;
+            pbHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            pbHelp.InitialImage = Properties.Resource.help;
+            pbHelp.Location = new System.Drawing.Point(628, 8);
+            pbHelp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pbHelp.Name = "pbHelp";
+            pbHelp.Size = new System.Drawing.Size(29, 34);
+            pbHelp.TabIndex = 12;
+            pbHelp.TabStop = false;
+            ttMain.SetToolTip(pbHelp, "Open help page in your browser");
+            pbHelp.Click += pbHelp_Click;
             // 
             // pTop
             // 
-            this.pTop.BackColor = System.Drawing.Color.SteelBlue;
-            this.pTop.Controls.Add(this.pbHelp);
-            this.pTop.Controls.Add(this.lblActiveFilter);
-            this.pTop.Controls.Add(this.cbFilters);
-            this.pTop.Controls.Add(this.pbAddIssue);
-            this.pTop.Location = new System.Drawing.Point(0, 0);
-            this.pTop.Name = "pTop";
-            this.pTop.Size = new System.Drawing.Size(517, 35);
-            this.pTop.TabIndex = 11;
+            pTop.BackColor = System.Drawing.Color.SteelBlue;
+            pTop.Controls.Add(pbHelp);
+            pTop.Controls.Add(lblActiveFilter);
+            pTop.Controls.Add(cbFilters);
+            pTop.Controls.Add(pbAddIssue);
+            pTop.Dock = System.Windows.Forms.DockStyle.Top;
+            pTop.Location = new System.Drawing.Point(0, 0);
+            pTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pTop.Name = "pTop";
+            pTop.Size = new System.Drawing.Size(732, 54);
+            pTop.TabIndex = 11;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(609, 223);
-            this.Controls.Add(this.pTop);
-            this.Controls.Add(this.pBottom);
-            this.Controls.Add(this.pMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = global::StopWatch.Properties.Resources.stopwatchicon;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
-            this.Name = "MainForm";
-            this.Text = "JIRA StopWatch";
-            this.TopMost = true;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
-            this.Shown += new System.EventHandler(this.MainForm_Shown);
-            this.Resize += new System.EventHandler(this.MainForm_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pbSettings)).EndInit();
-            this.pBottom.ResumeLayout(false);
-            this.pBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddIssue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHelp)).EndInit();
-            this.pTop.ResumeLayout(false);
-            this.pTop.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.Window;
+            ClientSize = new System.Drawing.Size(732, 343);
+            Controls.Add(pMain);
+            Controls.Add(pTop);
+            Controls.Add(pBottom);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Icon = Properties.Resource.stopwatchicon;
+            MaximizeBox = false;
+            Name = "MainForm";
+            Text = "JIRA StopWatch";
+            TopMost = true;
+            FormClosed += MainForm_FormClosed;
+            Shown += MainForm_Shown;
+            Resize += MainForm_Resize;
+            ((System.ComponentModel.ISupportInitialize)pbSettings).EndInit();
+            pBottom.ResumeLayout(false);
+            pBottom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAddIssue).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHelp).EndInit();
+            pTop.ResumeLayout(false);
+            pTop.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

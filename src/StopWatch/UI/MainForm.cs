@@ -30,7 +30,7 @@ namespace StopWatch
         #region public methods
         public MainForm()
         {
-            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoScaleMode = AutoScaleMode.Font;
 
             settings = Settings.Instance;
             if (!settings.Load())
@@ -485,14 +485,14 @@ namespace StopWatch
                     {
                         lblConnectionStatus.Text = "Connected";
                         lblConnectionStatus.ForeColor = Color.DarkGreen;
-                        lblConnectionStatus.Font = new Font(lblConnectionStatus.Font, FontStyle.Regular);
+                        lblConnectionStatus.Font = new Font(lblConnectionStatus.Font, FontStyle.Bold);
                         lblConnectionStatus.Cursor = Cursors.Default;
                     }
                     else
                     {
                         lblConnectionStatus.Text = "Not connected";
                         lblConnectionStatus.ForeColor = Color.Tomato;
-                        lblConnectionStatus.Font = new Font(lblConnectionStatus.Font, FontStyle.Regular | FontStyle.Underline);
+                        lblConnectionStatus.Font = new Font(lblConnectionStatus.Font, FontStyle.Bold | FontStyle.Underline);
                         lblConnectionStatus.Cursor = Cursors.Hand;
                     }
                 }

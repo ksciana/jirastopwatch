@@ -7,7 +7,7 @@
     using System.Linq;
     using System.Net;
 
-    internal class TestPocoClass
+    public class TestPocoClass
     {
         public string foo { get; set; }
         public string bar { get; set; }

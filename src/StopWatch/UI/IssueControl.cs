@@ -15,15 +15,17 @@ limitations under the License.
 **************************************************************************/
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StopWatch
 {
-    internal class IssueControl : UserControl
+    public class IssueControl : UserControl
     {
-        #region public members
+  
         public string IssueKey
         {
             get
@@ -81,17 +83,17 @@ namespace StopWatch
         public event EventHandler Selected;
 
         public event EventHandler TimeEdited;
-        #endregion
 
 
-        #region public events
+
+
         public event EventHandler TimerStarted;
 
         public event EventHandler TimerReset;
-        #endregion
 
 
-        #region public methods
+
+
         public IssueControl(JiraClient jiraClient, Settings settings)
             : base()
         {
@@ -132,18 +134,18 @@ namespace StopWatch
 
             if (WatchTimer.Running)
             {
-                btnStartStop.Image = (System.Drawing.Image)(Properties.Resources.pause26);
+                btnStartStop.Image = (System.Drawing.Image)(Properties.Resource.pause);
                 tbTime.BackColor = Color.PaleGreen;
             }
             else {
-                btnStartStop.Image = (System.Drawing.Image)(Properties.Resources.play26);
+                btnStartStop.Image = (System.Drawing.Image)(Properties.Resource.play);
                 tbTime.BackColor = SystemColors.Control;
             }
 
             if (string.IsNullOrEmpty(Comment))
-                btnPostAndReset.Image = (System.Drawing.Image)Properties.Resources.posttime26;
+                btnPostAndReset.Image = (System.Drawing.Image)Properties.Resource.post;
             else
-                btnPostAndReset.Image = (System.Drawing.Image)Properties.Resources.posttimenote26;
+                btnPostAndReset.Image = (System.Drawing.Image)Properties.Resource.post;
 
             btnOpen.Enabled = cbJira.Text.Trim() != "";
             btnReset.Enabled = WatchTimer.Running || WatchTimer.TimeElapsed.Ticks > 0;
@@ -171,10 +173,10 @@ namespace StopWatch
         {
             cbJira.Focus();
         }
-        #endregion
 
 
-        #region private methods
+
+
         public void OpenJira()
         {
             if (cbJira.Text == "")
@@ -322,7 +324,7 @@ namespace StopWatch
             // btnRemoveIssue
             // 
             btnRemoveIssue.Enabled = false;
-            btnRemoveIssue.Image = Properties.Resources.delete24;
+            btnRemoveIssue.Image = Properties.Resource.delete;
             btnRemoveIssue.Location = new Point(465, 3);
             btnRemoveIssue.Name = "btnRemoveIssue";
             btnRemoveIssue.Size = new Size(32, 32);
@@ -334,7 +336,7 @@ namespace StopWatch
             // btnPostAndReset
             // 
             btnPostAndReset.Cursor = Cursors.Hand;
-            btnPostAndReset.Image = Properties.Resources.posttime26;
+            btnPostAndReset.Image = Properties.Resource.post;
             btnPostAndReset.Location = new Point(369, 3);
             btnPostAndReset.Name = "btnPostAndReset";
             btnPostAndReset.Size = new Size(32, 32);
@@ -347,7 +349,7 @@ namespace StopWatch
             // btnReset
             // 
             btnReset.Cursor = Cursors.Hand;
-            btnReset.Image = Properties.Resources.reset24;
+            btnReset.Image = Properties.Resource.reset;
             btnReset.Location = new Point(429, 3);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(32, 32);
@@ -360,7 +362,7 @@ namespace StopWatch
             // btnStartStop
             // 
             btnStartStop.Cursor = Cursors.Hand;
-            btnStartStop.Image = Properties.Resources.play26;
+            btnStartStop.Image = Properties.Resource.play;
             btnStartStop.Location = new Point(220, 3);
             btnStartStop.Name = "btnStartStop";
             btnStartStop.Size = new Size(32, 32);
@@ -373,7 +375,7 @@ namespace StopWatch
             // btnOpen
             // 
             btnOpen.Cursor = Cursors.Hand;
-            btnOpen.Image = Properties.Resources.openbrowser26;
+            btnOpen.Image = Properties.Resource.open;
             btnOpen.Location = new Point(168, 3);
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(32, 32);
@@ -424,12 +426,11 @@ namespace StopWatch
                 url += "/";
             url += "browse/";
             url += key.Trim();
-            System.Diagnostics.Process.Start(url);
+
+            this.OpenUrl(url);
         }
-        #endregion
 
 
-        #region private eventhandlers
         void cbJira_MeasureItem(object sender, MeasureItemEventArgs e)
         {
             if (e.Index == 0)
@@ -614,10 +615,39 @@ namespace StopWatch
             if (e.KeyCode == Keys.Enter)
                 EditTime();
         }
-        #endregion
 
 
-        #region private methods
+
+
+        private void OpenUrl(string url)
+        {
+            try
+            {
+                Process.Start(url);
+            }
+            catch
+            {
+                // hack because of this: https://github.com/dotnet/corefx/issues/10361
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    url = url.Replace("&", "^&");
+                    Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", url);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", url);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
         private void PostAndReset(string key, DateTimeOffset startTime, TimeSpan timeElapsed, string comment, EstimateUpdateMethods estimateUpdateMethod, string estimateUpdateValue)
         {
             Task.Factory.StartNew(
@@ -662,7 +692,6 @@ namespace StopWatch
             );
         }
 
-
         private void LoadIssues()
         {
             // TODO: This + the datasource for cbFilters should be moved into a controller layer
@@ -696,7 +725,6 @@ namespace StopWatch
             );
         }
 
-
         public void EditTime()
         {
             using (var editTimeForm = new EditTimeForm(WatchTimer.TimeElapsed))
@@ -712,30 +740,34 @@ namespace StopWatch
             }
         }
 
-
         public void OpenCombo()
         {
             cbJira.Focus();
             cbJira.DroppedDown = true;
         }
 
-
         private void SetSelected()
         {
             Selected?.Invoke(this, new EventArgs());
         }
-        #endregion
 
-        #region private members
+
         private ComboBox cbJira;
+
         private Button btnOpen;
+
         private TextBox tbTime;
+
         private Button btnStartStop;
+
         private Button btnReset;
+
         private Label lblSummary;
 
         private ToolTip ttIssue;
+
         private System.ComponentModel.IContainer components;
+
         private Button btnPostAndReset;
 
         private JiraClient jiraClient;
@@ -743,16 +775,22 @@ namespace StopWatch
         private Settings settings;
 
         private int keyWidth;
+
         private string RemainingEstimate;
+
         private int RemainingEstimateSeconds;
+
         private Button btnRemoveIssue;
+
+
+
         private bool _MarkedForRemoval = false;
 
         private ComboTextBoxEvents cbJiraTbEvents;
-        #endregion
 
 
-        #region private classes
+
+
         // content item for the combo box
         private class CBIssueItem {
             public string Key { get; set; }
@@ -763,7 +801,7 @@ namespace StopWatch
                 Summary = summary;
             }
         }
-        #endregion
+
 
         private void IssueControl_MouseUp(object sender, MouseEventArgs e)
         {

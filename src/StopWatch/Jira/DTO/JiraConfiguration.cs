@@ -15,7 +15,7 @@ limitations under the License.
 **************************************************************************/
 namespace StopWatch
 {
-    internal class JiraConfiguration
+    public class JiraConfiguration
     {
         public TimeTrackingConfiguration timeTrackingConfiguration { get; set; }
     }

@@ -17,7 +17,7 @@ using System;
 
 namespace StopWatch
 {
-    internal class TimerState
+    public class TimerState
     {
         public bool Running { get; set; }
 
@@ -28,7 +28,7 @@ namespace StopWatch
     }
 
 
-    internal class WatchTimer
+    public class WatchTimer
     {
         #region public members
         public TimeSpan TimeElapsed

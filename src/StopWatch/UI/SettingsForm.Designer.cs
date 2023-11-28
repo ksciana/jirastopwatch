@@ -396,7 +396,7 @@ namespace StopWatch
             Controls.Add(lblDisplayOptions);
             Controls.Add(tbJiraBaseUrl);
             Controls.Add(lblJiraBaseUrl);
-            Icon = Properties.Resources.stopwatchicon;
+            Icon = Properties.Resource.stopwatchicon;
             Name = "SettingsForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             Text = "StopWatch Settings";

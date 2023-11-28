@@ -43,101 +43,104 @@ namespace StopWatch
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
-            this.lblNameVersion = new System.Windows.Forms.Label();
-            this.lblLicense = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblHomepage = new System.Windows.Forms.LinkLabel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            lblNameVersion = new System.Windows.Forms.Label();
+            lblLicense = new System.Windows.Forms.LinkLabel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            lblHomepage = new System.Windows.Forms.LinkLabel();
+            btnClose = new System.Windows.Forms.Button();
+            textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // lblNameVersion
             // 
-            this.lblNameVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameVersion.Location = new System.Drawing.Point(55, 22);
-            this.lblNameVersion.Name = "lblNameVersion";
-            this.lblNameVersion.Size = new System.Drawing.Size(217, 29);
-            this.lblNameVersion.TabIndex = 0;
-            this.lblNameVersion.Text = "Jira StopWatch";
+            lblNameVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblNameVersion.Location = new System.Drawing.Point(73, 34);
+            lblNameVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblNameVersion.Name = "lblNameVersion";
+            lblNameVersion.Size = new System.Drawing.Size(289, 45);
+            lblNameVersion.TabIndex = 0;
+            lblNameVersion.Text = "Jira StopWatch";
             // 
             // lblLicense
             // 
-            this.lblLicense.Location = new System.Drawing.Point(12, 161);
-            this.lblLicense.Name = "lblLicense";
-            this.lblLicense.Size = new System.Drawing.Size(260, 17);
-            this.lblLicense.TabIndex = 1;
-            this.lblLicense.TabStop = true;
-            this.lblLicense.Text = "Read License here";
-            this.lblLicense.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLicense_LinkClicked);
+            lblLicense.Location = new System.Drawing.Point(16, 248);
+            lblLicense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblLicense.Name = "lblLicense";
+            lblLicense.Size = new System.Drawing.Size(347, 26);
+            lblLicense.TabIndex = 1;
+            lblLicense.TabStop = true;
+            lblLicense.Text = "Read License here";
+            lblLicense.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lblLicense.LinkClicked += lblLicense_LinkClicked;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::StopWatch.Properties.Resources.stopwatchimg;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resource.timer_48;
+            pictureBox1.Location = new System.Drawing.Point(11, 18);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(60, 60);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // lblHomepage
             // 
-            this.lblHomepage.Location = new System.Drawing.Point(12, 191);
-            this.lblHomepage.Name = "lblHomepage";
-            this.lblHomepage.Size = new System.Drawing.Size(260, 17);
-            this.lblHomepage.TabIndex = 4;
-            this.lblHomepage.TabStop = true;
-            this.lblHomepage.Text = "Visit product homepage";
-            this.lblHomepage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblHomepage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblHomepage_LinkClicked);
+            lblHomepage.Location = new System.Drawing.Point(16, 294);
+            lblHomepage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblHomepage.Name = "lblHomepage";
+            lblHomepage.Size = new System.Drawing.Size(347, 26);
+            lblHomepage.TabIndex = 4;
+            lblHomepage.TabStop = true;
+            lblHomepage.Text = "Visit product homepage";
+            lblHomepage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lblHomepage.LinkClicked += lblHomepage_LinkClicked;
             // 
             // btnClose
             // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(106, 227);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            btnClose.Location = new System.Drawing.Point(141, 349);
+            btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(100, 35);
+            btnClose.TabIndex = 5;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(12, 54);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 100);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Copyright 2015 Carsten Gehling\r\n\r\nContact me at: carsten@sarum.dk\r\n\r\nLicensed und" +
-    "er the Apache License, Version 2.0. This software is free to use under the terms" +
-    " specified in the license.";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox1.BackColor = System.Drawing.SystemColors.Control;
+            textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBox1.Location = new System.Drawing.Point(16, 83);
+            textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(347, 154);
+            textBox1.TabIndex = 6;
+            textBox1.Text = "Copyright 2015 Carsten Gehling\r\n\r\nContact me at: carsten@sarum.dk\r\n\r\nLicensed under the Apache License, Version 2.0. This software is free to use under the terms specified in the license.";
+            textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.lblHomepage);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblLicense);
-            this.Controls.Add(this.lblNameVersion);
-            this.Icon = Properties.Resources.stopwatchicon;
-            this.Name = "AboutForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About Jira StopWatch";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = btnClose;
+            ClientSize = new System.Drawing.Size(379, 403);
+            Controls.Add(textBox1);
+            Controls.Add(btnClose);
+            Controls.Add(lblHomepage);
+            Controls.Add(pictureBox1);
+            Controls.Add(lblLicense);
+            Controls.Add(lblNameVersion);
+            Icon = Properties.Resource.stopwatchicon;
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "AboutForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "About Jira StopWatch";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
