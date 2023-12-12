@@ -43,86 +43,85 @@ namespace StopWatch
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbTime = new System.Windows.Forms.TextBox();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.lblHint = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            tbTime = new System.Windows.Forms.TextBox();
+            btnOk = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            lblHeader = new System.Windows.Forms.Label();
+            lblHint = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // tbTime
             // 
-            this.tbTime.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.3F);
-            this.tbTime.Location = new System.Drawing.Point(14, 25);
-            this.tbTime.Name = "tbTime";
-            this.tbTime.Size = new System.Drawing.Size(133, 28);
-            this.tbTime.TabIndex = 4;
-            this.tbTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbTime.TextChanged += new System.EventHandler(this.tbTime_TextChanged);
+            tbTime.BackColor = System.Drawing.SystemColors.Window;
+            tbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.3F);
+            tbTime.Location = new System.Drawing.Point(19, 38);
+            tbTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tbTime.Name = "tbTime";
+            tbTime.Size = new System.Drawing.Size(176, 33);
+            tbTime.TabIndex = 4;
+            tbTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            tbTime.TextChanged += tbTime_TextChanged;
             // 
             // btnOk
             // 
-            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(30, 103);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(56, 23);
-            this.btnOk.TabIndex = 6;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnOk.Location = new System.Drawing.Point(40, 158);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new System.Drawing.Size(75, 35);
+            btnOk.TabIndex = 6;
+            btnOk.Text = "OK";
+            btnOk.UseVisualStyleBackColor = true;
+            btnOk.Click += btnOk_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(91, 103);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(56, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            btnCancel.Location = new System.Drawing.Point(121, 158);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(75, 35);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
             // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Location = new System.Drawing.Point(11, 9);
-            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(50, 13);
-            this.lblHeader.TabIndex = 5;
-            this.lblHeader.Text = "Edit timer";
+            lblHeader.AutoSize = true;
+            lblHeader.Location = new System.Drawing.Point(15, 14);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new System.Drawing.Size(74, 20);
+            lblHeader.TabIndex = 5;
+            lblHeader.Text = "Edit timer";
             // 
             // lblHint
             // 
-            this.lblHint.AutoSize = true;
-            this.lblHint.Location = new System.Drawing.Point(11, 56);
-            this.lblHint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHint.Name = "lblHint";
-            this.lblHint.Size = new System.Drawing.Size(96, 26);
-            this.lblHint.TabIndex = 8;
-            this.lblHint.Text = "Supported formats:\r\n2h 15m and 2.25h";
+            lblHint.AutoSize = true;
+            lblHint.Location = new System.Drawing.Point(15, 86);
+            lblHint.Name = "lblHint";
+            lblHint.Size = new System.Drawing.Size(137, 40);
+            lblHint.TabIndex = 8;
+            lblHint.Text = "Supported formats:\r\n2h 15m and 2.25h";
             // 
             // EditTimeForm
             // 
-            this.AcceptButton = this.btnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(159, 137);
-            this.Controls.Add(this.lblHint);
-            this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.tbTime);
-            this.Name = "EditTimeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edit Timer";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnOk;
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = btnCancel;
+            ClientSize = new System.Drawing.Size(212, 211);
+            Controls.Add(lblHint);
+            Controls.Add(btnOk);
+            Controls.Add(btnCancel);
+            Controls.Add(lblHeader);
+            Controls.Add(tbTime);
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "EditTimeForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "Edit Timer";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
