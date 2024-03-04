@@ -1,11 +1,27 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.4.33213.308
+VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopWatch", "source\StopWatch\StopWatch.csproj", "{B7C11B2A-F064-4BA4-BD87-954197D7FF35}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8C61A83-5EA6-4C4B-993E-AA68E458F1E9}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		LICENSE.rtf = LICENSE.rtf
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopWatchTest", "source\StopWatchTest\StopWatchTest.csproj", "{7F60E6E6-B488-4A6E-868B-796E3A42F552}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C4659190-1C18-41F0-8BD5-F71F4B224CED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5A6E5810-160E-45C0-9F34-A674F5207020}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopWatch", "src\StopWatch\StopWatch.csproj", "{DAAD8554-B253-4FD4-8499-3DEA47EADB9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopWatchTest", "tests\StopWatchTest\StopWatchTest.csproj", "{6AD878B9-EF5A-442F-A5A6-8D9B778D39C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{36924E74-F92D-4627-A116-A3ADA8DBB796}"
+	ProjectSection(SolutionItems) = preProject
+		setup\StopWatchSetup\StopWatchSetup.vdproj = setup\StopWatchSetup\StopWatchSetup.vdproj
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +29,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B7C11B2A-F064-4BA4-BD87-954197D7FF35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7C11B2A-F064-4BA4-BD87-954197D7FF35}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7C11B2A-F064-4BA4-BD87-954197D7FF35}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7C11B2A-F064-4BA4-BD87-954197D7FF35}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F60E6E6-B488-4A6E-868B-796E3A42F552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F60E6E6-B488-4A6E-868B-796E3A42F552}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F60E6E6-B488-4A6E-868B-796E3A42F552}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F60E6E6-B488-4A6E-868B-796E3A42F552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAAD8554-B253-4FD4-8499-3DEA47EADB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAAD8554-B253-4FD4-8499-3DEA47EADB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAAD8554-B253-4FD4-8499-3DEA47EADB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAAD8554-B253-4FD4-8499-3DEA47EADB9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD878B9-EF5A-442F-A5A6-8D9B778D39C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD878B9-EF5A-442F-A5A6-8D9B778D39C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD878B9-EF5A-442F-A5A6-8D9B778D39C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD878B9-EF5A-442F-A5A6-8D9B778D39C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAAD8554-B253-4FD4-8499-3DEA47EADB9B} = {C4659190-1C18-41F0-8BD5-F71F4B224CED}
+		{6AD878B9-EF5A-442F-A5A6-8D9B778D39C2} = {5A6E5810-160E-45C0-9F34-A674F5207020}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5B0ED504-86F9-437D-973D-6E948BF73E27}
+		SolutionGuid = {0C1572C6-C093-42B8-96B0-3F2B11E06965}
 	EndGlobalSection
 EndGlobal

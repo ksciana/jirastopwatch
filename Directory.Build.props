@@ -1,0 +1,29 @@
+<Project>
+    <PropertyGroup>
+        <BaseOutputPath>$(MSBuildThisFileDirectory)\build\$(MSBuildProjectName)\bin\</BaseOutputPath>
+        <PublishDir>$(MSBuildThisFileDirectory)\publish\$(MSBuildProjectName)</PublishDir>
+        <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <DebugSymbols>False</DebugSymbols>
+        <DebugType>None</DebugType>
+    </PropertyGroup>
+    <Choose>
+        <When Condition="'$(BUILD_NUMBER)'==''">
+            <PropertyGroup>
+                <BuildNumber>0-dev</BuildNumber>
+            </PropertyGroup>
+        </When>
+        <Otherwise>
+            <PropertyGroup>
+                <BuildNumber>$(BUILD_NUMBER)</BuildNumber>
+            </PropertyGroup>
+        </Otherwise>
+    </Choose>
+
+    <PropertyGroup>
+        <Version>3.0.$(BuildNumber)</Version>
+    </PropertyGroup>
+
+</Project>
